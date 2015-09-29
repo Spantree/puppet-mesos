@@ -23,11 +23,9 @@ class mesos::repo(
               location => "http://repos.mesosphere.io/${distro}",
               release  => $::lsbdistcodename,
               repos    => 'main',
-              key      => {
-                'id'     => '81026D0004C44CF7EF55ADF8DF7D54CBE56151BF',
-                'server' => 'subkeys.pgp.net',
-              },
-              include  => { 'src' => false }
+              key      => '81026D0004C44CF7EF55ADF8DF7D54CBE56151BF',
+              src      => false,
+              #include  => { 'src'                                     => false }
             }
           }
           default: {
